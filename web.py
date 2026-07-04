@@ -8,8 +8,8 @@ import traceback
 TEMP = "./temp"
 OUTPUT_DIR = "./out"  # 输出目录
 MAX_TEMP_AGE = timedelta(hours=2)  # 减少到2小时
-MAX_FILE_SIZE = 500 * 1024 * 1024  # 200MB文件大小限制
-MAX_FILES = 15  # 最多同时处理5个文件
+MAX_FILE_SIZE = 500 * 1024 * 1024  # 500MB文件大小限制
+MAX_FILES = 15  # 最多同时处理15个文件
 
 def get_temp_file_path(input_file):
     """获取临时文件路径"""
