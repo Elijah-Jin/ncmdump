@@ -8,8 +8,8 @@ import traceback
 TEMP = "./temp"
 OUTPUT_DIR = "./out"  # 输出目录
 MAX_TEMP_AGE = timedelta(hours=2)  # 减少到2小时
-MAX_FILE_SIZE = 200 * 1024 * 1024  # 200MB文件大小限制
-MAX_FILES = 5  # 最多同时处理5个文件
+MAX_FILE_SIZE = 500 * 1024 * 1024  # 200MB文件大小限制
+MAX_FILES = 15  # 最多同时处理5个文件
 
 def get_temp_file_path(input_file):
     """获取临时文件路径"""
@@ -61,8 +61,8 @@ def web_page():
         st.session_state.conversion_done = False
     
     st.title("NCM转换器")
-    st.info("单文件大小限制: 200MB，最多同时处理5个文件")
-    
+    st.info("单文件大小限制: 500MB，最多同时处理15个文件")
+    st.warning("⚠️ 警告：为防止服务器硬盘爆满，请分批上传（建议每批50首以内），下载完成后务必点击下方【清空结果】释放空间！")    
     # 显示已转换的文件下载按钮
     if st.session_state.converted_files:
         st.markdown("### 转换完成的文件")
